@@ -4,16 +4,19 @@ using Vector2 = UnityEngine.Vector2;
 
 public class SimpleCharacterMovement : MonoBehaviour
 {
+    [SerializeField] Camera_3D lookingMouse;
+
     [Header("Move")]
     public float movingSpeed = 5;
     public float runningSpeedFactor = 1.5f;
     public float rotationSpeed = 3;
     public bool holdShiftToRun = false;
+
+
     private bool isRunning = false;
     private Vector2 direction;
-
     private Animator _animator;
-    
+    private Vector2 mouseInput;
     
     void Start()
     {
@@ -33,6 +36,9 @@ public class SimpleCharacterMovement : MonoBehaviour
         {
             _animator.SetFloat("Speed", 0);
         }
+
+        lookingMouse.ReceiveInput(mouseInput);
+        Debug.Log(mouseInput);
     }
 
     public void Move(InputAction.CallbackContext ctx)
@@ -45,4 +51,13 @@ public class SimpleCharacterMovement : MonoBehaviour
         isRunning = holdShiftToRun && ctx.ReadValueAsButton();
     }
 
+    public void MoveX(InputAction.CallbackContext ctx)
+    {
+        mouseInput.x = ctx.ReadValue<float>();
+    }
+
+    public void MoveY(InputAction.CallbackContext ctx)
+    {
+        mouseInput.y = ctx.ReadValue<float>();
+    }
 }
