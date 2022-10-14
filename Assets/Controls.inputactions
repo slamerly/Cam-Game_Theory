@@ -34,7 +34,7 @@
                 },
                 {
                     "name": "MouseX",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "298beabf-a737-4d04-b7f6-80f3b493fb81",
                     "expectedControlType": "Axis",
                     "processors": "",
@@ -43,9 +43,18 @@
                 },
                 {
                     "name": "MouseY",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "8845dbac-d848-46ae-8bf3-75afb867af3b",
                     "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Zoom",
+                    "type": "Value",
+                    "id": "f1f9c06c-b0db-445f-880e-12f4ec0f31af",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -214,6 +223,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MouseY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "16b060d2-0df8-450b-95d1-1e7110827578",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
